@@ -1,10 +1,10 @@
-USE ppdb;
-START TRANSACTION;
+USE ppdb; --Added database to run against
+START TRANSACTION; -- Mysql uses start transaction instead of begin transaction
 CREATE TABLE web_events (
 	id int,
-	account_id int,
+	account_id int, --integer and int are same
 	occurred_at timestamp,
-	CHANNEL varchar(30)
+	CHANNEL varchar(30) --bpchar changed to varchar(30)
 );
 INSERT INTO web_events VALUES (1,1001,'2015-10-06 17:13:58','direct');
 INSERT INTO web_events VALUES (2,1001,'2015-11-05 03:08:26','direct');
@@ -9081,7 +9081,7 @@ INSERT INTO web_events VALUES (9072,4491,'2016-12-18 03:21:31','organic');
 INSERT INTO web_events VALUES (9073,4501,'2016-05-30 00:46:53','organic');
 CREATE TABLE sales_reps (
 	id integer,
-	name VARCHAR(30),
+	name VARCHAR(30), --bpchar changed to varchar(30)
 	region_id integer
 );
 INSERT INTO sales_reps VALUES (321500,'Samuel Racine',1);
@@ -9136,7 +9136,7 @@ INSERT INTO sales_reps VALUES (321980,'Micha Woodford',4);
 INSERT INTO sales_reps VALUES (321990,'Dawna Agnew',4);
 CREATE TABLE region (
 	id integer,
-	name VARCHAR(30)
+	name VARCHAR(30) --bpchar changed to varchar(30)
 );
 INSERT INTO region VALUES (1,'Northeast');
 INSERT INTO region VALUES (2,'Midwest');
@@ -16069,8 +16069,8 @@ INSERT INTO orders VALUES (6911,4501,'2016-11-22 06:52:22',63,67,81,211,314.37,5
 INSERT INTO orders VALUES (6912,4501,'2016-12-21 13:30:42',61,150,52,263,304.39,1123.5,422.24,1850.13);
 CREATE TABLE accounts (
 	id integer,
-	NAME VARCHAR(60),
-	website VARCHAR(90),
+	NAME VARCHAR(60), --bpchar changed to varchar(60)
+	website VARCHAR(90), --bpchar changed to varchar(60)
 	lat numeric(11,8),
 	`long` numeric(11,8),
 	primary_poc VARCHAR(30),
